@@ -1,39 +1,23 @@
+import StringSchema from "./schemas/stringSchema.js";
+import NumberSchema from "./schemas/numberSchema.js";
+import ArraySchema from "./schemas/arraySchema.js";
+import ObjectSchema from "./schemas/objectSchema.js";
+
 class Validator { 
-  constructor() {
-    this.checks = [];
-    this.params = {};
-    this.validations = {
-      'string': (val) => typeof val === 'string',
-      'required': (val) => val.length > 0,
-      'minLength': (val) => val.length >= this.params.minLength,
-      'contains': (val) => val.includes(this.params.str),
-    };
-  }
-
-  isValid(value) {
-    return this.checks.every((check) => this.validations[check](value));
-  }
-
   string() {
-    this.checks.push('string');
-    return this;
+    return new StringSchema();
   }
 
-  required() {
-    this.checks.push('required');
-    return this;
+  number() {
+    return new NumberSchema();
   }
 
-  minLength(len) {
-    this.checks.push('minLength');
-    this.params.minLength = len;
-    return this;
+  array() {
+    return new ArraySchema();
   }
 
-  contains(str) {
-    this.checks.push('contains');
-    this.params.str = str;
-    return this;
+  object() {
+    return new ObjectSchema();
   }
 }
 
