@@ -1,12 +1,10 @@
-import Schema from "./schema.js";
-import ArrayValidator from "../validators/arrayValidator.js";
+import Schema from './schema.js';
 
 class ArraySchema extends Schema {
-  constructor() {
-    super();
+  constructor(validator) {
+    super(validator);
     this.checks = ['array'];
     this.params = {};
-    this.validator = new ArrayValidator();
   }
 
   required() {

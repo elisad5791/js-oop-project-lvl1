@@ -1,12 +1,10 @@
-import Schema from "./schema.js";
-import StringValidator from "../validators/stringValidator.js";
+import Schema from './schema.js';
 
 class StringSchema extends Schema {
-  constructor() {
-    super();
+  constructor(validator) {
+    super(validator);
     this.checks = ['string'];
     this.params = {};
-    this.validator = new StringValidator();
   }
 
   required() {

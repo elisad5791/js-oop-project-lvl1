@@ -1,12 +1,10 @@
-import Schema from "./schema.js";
-import ObjectValidator from "../validators/objectValidator.js";
+import Schema from './schema.js';
 
 class ObjectSchema extends Schema {
-  constructor() {
-    super();
+  constructor(validator) {
+    super(validator);
     this.checks = ['object'];
     this.params = {};
-    this.validator = new ObjectValidator();
   }
 
   shape(template) {

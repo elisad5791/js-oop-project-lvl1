@@ -1,12 +1,10 @@
-import Schema from "./schema.js";
-import NumberValidator from "../validators/numberValidator.js";
+import Schema from './schema.js';
 
 class NumberSchema extends Schema {
-  constructor() {
-    super();
+  constructor(validator) {
+    super(validator);
     this.checks = ['number'];
     this.params = {};
-    this.validator = new NumberValidator();
   }
 
   required() {
@@ -24,7 +22,6 @@ class NumberSchema extends Schema {
     this.params.range = [num1, num2];
     return this;
   }
-
 }
 
 export default NumberSchema;

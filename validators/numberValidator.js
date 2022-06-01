@@ -8,7 +8,7 @@ class NumberValidator {
   }
 
   positive(val) {
-    return  val > 0 || val === null;
+    return val > 0 || val === null;
   }
 
   range(val, { range }) {
