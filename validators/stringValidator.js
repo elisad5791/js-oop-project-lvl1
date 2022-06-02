@@ -1,17 +1,17 @@
 class StringValidator {
-  string(val) {
+  static string(val) {
     return typeof val === 'string' || val === null || val === undefined;
   }
 
-  required(val) {
+  static required(val) {
     return typeof val === 'string' && val.length > 0;
   }
 
-  minLength(val, { minLength }) {
+  static minLength(val, { minLength }) {
     return val.length >= minLength;
   }
 
-  contains(val, { str }) {
+  static contains(val, { str }) {
     return val.includes(str);
   }
 }

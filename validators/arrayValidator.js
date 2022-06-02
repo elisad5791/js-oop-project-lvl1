@@ -1,13 +1,13 @@
 class ArrayValidator {
-  array(val) {
+  static array(val) {
     return Array.isArray(val) || val === null || val === undefined;
   }
 
-  required(val) {
+  static required(val) {
     return Array.isArray(val);
   }
 
-  sizeof(val, { size }) {
+  static sizeof(val, { size }) {
     return val.length === size;
   }
 }

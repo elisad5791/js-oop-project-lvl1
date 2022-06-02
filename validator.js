@@ -49,7 +49,7 @@ class Validator {
     const checks = this.userValidations[type];
     if (checks.length > 0) {
       return checks.reduce((acc, [name, fn]) => {
-        acc[name] = (val, { userParams }) => fn(val, ...userParams);
+        acc.constructor[name] = (val, { userParams }) => fn(val, ...userParams);
         return acc;
       }, validator);
     }
